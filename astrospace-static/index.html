@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroSpace - Explorando o Universo</title>
+  <meta name="description" content="AstroSpace: aprenda sobre planetas, estrelas, galáxias e fenômenos do espaço.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Fundo com estrelas animadas (preenchido pelo JavaScript) -->
+  <canvas id="estrelas-canvas" aria-hidden="true"></canvas>
+
+  <!-- ===== Barra de navegação ===== -->
+  <header class="topbar">
+    <a href="#inicio" class="logo">Astro<span>Space</span></a>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">☰</button>
+
+    <nav id="menu" class="menu">
+      <a href="#inicio">Início</a>
+      <a href="#sistema-solar">Sistema Solar</a>
+      <a href="#estrelas">Estrelas e Galáxias</a>
+      <a href="#fenomenos">Fenômenos</a>
+      <a href="#curiosidades">Curiosidades</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. INÍCIO ===== -->
+    <section id="inicio" class="hero">
+      <span class="planeta-flutuante p1" style="--cor:#c1440e" aria-hidden="true"></span>
+      <span class="planeta-flutuante p2" style="--cor:#d9a066" aria-hidden="true"></span>
+      <span class="planeta-flutuante p3" style="--cor:#3d7bd9" aria-hidden="true"></span>
+      <span class="sol-flutuante" aria-hidden="true"></span>
+
+      <h1>O universo começa <span class="gradiente-texto">a um olhar de distância</span></h1>
+      <p>
+        Bilhões de estrelas, galáxias sem fim e mundos ainda desconhecidos.
+        No AstroSpace, você explora o cosmos de forma simples e divertida.
+      </p>
+      <a href="#sistema-solar" class="btn">Começar a explorar</a>
+    </section>
+
+    <!-- ===== 2. SISTEMA SOLAR ===== -->
+    <section id="sistema-solar">
+      <h2 class="reveal">Sistema <span class="gradiente-texto">Solar</span></h2>
+      <p class="subtitulo reveal">
+        O Sol e os oito planetas que orbitam ao seu redor. Os dados são aproximados.
+      </p>
+
+      <!-- Card do Sol (conteúdo fixo) -->
+      <article class="card sol-card reveal">
+        <div class="planeta-visual">
+          <span class="sol" aria-hidden="true"></span>
+        </div>
+        <h3>Sol</h3>
+        <p>
+          Estrela do Sistema Solar, responsável por quase toda a energia que chega à Terra.
+          Concentra cerca de 99,8% da massa de todo o sistema.
+        </p>
+        <dl class="stats">
+          <div><dt>Diâmetro</dt><dd>cerca de 1.391.000 km</dd></div>
+          <div><dt>Temperatura da superfície</dt><dd>cerca de 5.500 °C</dd></div>
+          <div><dt>Composição</dt><dd>Hidrogênio (~73%) e hélio (~25%)</dd></div>
+        </dl>
+      </article>
+
+      <!-- Cards dos planetas -->
+      <div id="lista-planetas" class="grid planetas-grid">
+        <p class="aviso">Carregando planetas...</p>
+      </div>
+    </section>
+
+    <!-- ===== 3. ESTRELAS E GALÁXIAS ===== -->
+    <section id="estrelas">
+      <h2 class="reveal">Estrelas e <span class="gradiente-texto">Galáxias</span></h2>
+      <p class="subtitulo reveal">Do nascimento à morte das estrelas, passando pelas constelações e pelas galáxias.</p>
+
+      <h3 class="subsecao reveal">Ciclo de vida de uma estrela</h3>
+      <div class="grid">
+        <article class="card reveal">
+          <span class="etapa-num">1</span>
+          <h4>Nascimento</h4>
+          <p>Nuvens de gás e poeira, chamadas nebulosas, colapsam pela própria gravidade e formam uma protoestrela.</p>
+        </article>
+        <article class="card reveal">
+          <span class="etapa-num">2</span>
+          <h4>Sequência principal</h4>
+          <p>No núcleo, o hidrogênio se funde em hélio e libera energia. O Sol está nessa fase há cerca de 4,6 bilhões de anos.</p>
+        </article>
+        <article class="card reveal">
+          <span class="etapa-num">3</span>
+          <h4>Gigante vermelha</h4>
+          <p>Quando o hidrogênio do núcleo acaba, a estrela se expande e fica mais fria e avermelhada.</p>
+        </article>
+        <article class="card reveal">
+          <span class="etapa-num">4</span>
+          <h4>Morte</h4>
+          <p>Estrelas parecidas com o Sol viram anãs brancas. Estrelas muito massivas explodem como supernovas e podem formar estrelas de nêutrons ou buracos negros.</p>
+        </article>
+      </div>
+
+      <h3 class="subsecao reveal">Constelações</h3>
+      <div class="grid">
+        <article class="card reveal">
+          <h4>Cruzeiro do Sul</h4>
+          <p>Símbolo do céu do hemisfério sul. Suas estrelas mais brilhantes são usadas há séculos para localizar o polo sul celeste.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Órion</h4>
+          <p>Uma das constelações mais reconhecíveis do céu, formada por estrelas brilhantes e pelo famoso "cinturão" de três estrelas.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Ursa Maior</h4>
+          <p>Contém o asterismo conhecido como "Grande Carro". Suas duas estrelas da extremidade apontam para a Estrela Polar.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Escorpião</h4>
+          <p>Possui a estrela Antares, uma supergigante vermelha. Seu formato lembra um escorpião com a cauda curvada.</p>
+        </article>
+      </div>
+
+      <h3 class="subsecao reveal">Galáxias conhecidas</h3>
+      <div class="grid">
+        <article class="card reveal">
+          <h4>Via Láctea</h4>
+          <p>Nossa galáxia, do tipo espiral barrada. Abriga o Sistema Solar, e seu disco pode ser visto como uma faixa clara no céu noturno.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Andrômeda</h4>
+          <p>É a galáxia espiral mais próxima da Via Láctea, a cerca de 2,5 milhões de anos-luz de distância.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Triângulo</h4>
+          <p>Galáxia espiral vizinha, a cerca de 3 milhões de anos-luz. Faz parte do Grupo Local, junto com a Via Láctea e Andrômeda.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Grandes Nuvens de Magalhães</h4>
+          <p>Galáxias irregulares satélites da Via Láctea, a cerca de 160 mil anos-luz. São visíveis a olho nu no hemisfério sul.</p>
+        </article>
+      </div>
+
+      <h3 class="subsecao reveal">Universo observável</h3>
+      <article class="card destaque reveal">
+        <p>
+          O universo observável tem cerca de <strong>93 bilhões de anos-luz</strong> de diâmetro.
+          Estimativas indicam que ele contém centenas de bilhões de galáxias, e cada uma pode ter
+          centenas de bilhões de estrelas. Um ano-luz é a distância que a luz percorre em um ano, cerca de 9,46 trilhões de km.
+        </p>
+      </article>
+    </section>
+
+    <!-- ===== 4. FENÔMENOS ESPACIAIS ===== -->
+    <section id="fenomenos">
+      <h2 class="reveal">Fenômenos <span class="gradiente-texto">Espaciais</span></h2>
+      <p class="subtitulo reveal">Eventos extremos e espetáculos que acontecem no céu e no cosmos.</p>
+
+      <div class="grid">
+        <article class="card reveal">
+          <h4>Buracos negros</h4>
+          <p>Regiões em que a gravidade é tão intensa que nem a luz consegue escapar. O centro da Via Láctea abriga o buraco negro Sagitário A*, com cerca de 4 milhões de massas solares, a aproximadamente 26 mil anos-luz da Terra.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Supernovas</h4>
+          <p>Explosões que marcam o fim da vida de estrelas muito massivas. Por algumas semanas, a estrela pode brilhar com intensidade comparável à de uma galáxia inteira. Elas espalham elementos químicos pelo espaço.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Eclipses</h4>
+          <p><strong>Solar:</strong> a Lua passa entre o Sol e a Terra e projeta sua sombra sobre nós.<br>
+          <strong>Lunar:</strong> a Terra fica entre o Sol e a Lua, que pode adquirir um tom avermelhado.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Chuvas de meteoros</h4>
+          <p>Fragmentos de cometas e asteroides que queimam ao entrar na atmosfera. As Perseidas (agosto) vêm do cometa Swift-Tuttle, e os Geminídeos (dezembro) vêm do asteroide 3200 Phaethon.</p>
+        </article>
+        <article class="card reveal">
+          <h4>Auroras polares</h4>
+          <p>Partículas do vento solar são guiadas pelo campo magnético da Terra até os polos e colidem com a atmosfera, produzindo luzes coloridas. No Norte é a aurora boreal; no Sul, austral.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== 5. CURIOSIDADES ===== -->
+    <section id="curiosidades">
+      <h2 class="reveal">Curiosidades do <span class="gradiente-texto">Cosmos</span></h2>
+      <p class="subtitulo reveal">Clique no botão para receber uma curiosidade aleatória ou explore os cartões.</p>
+
+      <!-- Curiosidade aleatória -->
+      <div class="sorteio reveal">
+        <div id="curiosidade-aleatoria" class="card destaque">
+          <p>Carregando...</p>
+        </div>
+        <button id="btn-sortear" class="btn">Curiosidade aleatória</button>
+      </div>
+
+      <div class="duas-colunas">
+        <!-- Cadastro de curiosidade -->
+        <form id="form-curiosidade" class="card form reveal">
+          <h3>Cadastrar curiosidade</h3>
+          <label for="cur-titulo">Título</label>
+          <input id="cur-titulo" name="titulo" required maxlength="100" placeholder="Ex.: Anel de Saturno">
+
+          <label for="cur-categoria">Categoria</label>
+          <select id="cur-categoria" name="categoria" required>
+            <option value="Sol">Sol</option>
+            <option value="Planetas">Planetas</option>
+            <option value="Estrelas">Estrelas</option>
+            <option value="Galáxias">Galáxias</option>
+            <option value="Exploração">Exploração</option>
+            <option value="Outros">Outros</option>
+          </select>
+
+          <label for="cur-conteudo">Conteúdo</label>
+          <textarea id="cur-conteudo" name="conteudo" rows="4" required placeholder="Escreva o fato interessante..."></textarea>
+
+          <button type="submit" class="btn">Salvar curiosidade</button>
+        </form>
+
+        <!-- Favoritos -->
+        <div class="card reveal">
+          <h3>Meus favoritos</h3>
+          <form id="form-favorito" class="form-linha">
+            <input name="nome" required maxlength="80" placeholder="Nome do item (ex.: Júpiter)">
+            <select name="tipo" required>
+              <option value="Planeta">Planeta</option>
+              <option value="Estrela">Estrela</option>
+              <option value="Galáxia">Galáxia</option>
+              <option value="Fenômeno">Fenômeno</option>
+              <option value="Outro">Outro</option>
+            </select>
+            <button type="submit" class="btn btn-pequeno">Adicionar</button>
+          </form>
+          <ul id="lista-favoritos" class="lista-favoritos">
+            <li class="aviso">Carregando...</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="subsecao reveal">Todas as curiosidades</h3>
+      <div id="lista-curiosidades" class="grid">
+        <p class="aviso">Carregando curiosidades...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <p>AstroSpace © 2026 · Projeto escolar de divulgação científica</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
